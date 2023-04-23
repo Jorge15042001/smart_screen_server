@@ -5,7 +5,6 @@
 {% endblock title %}
 {% block include_files %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    {% comment %} <script defer src="{% static 'script.js' %}"></script> {% endcomment %}
 {% endblock include_files %}
 {% block content %}
     <div class="wrapper">
@@ -15,36 +14,41 @@
         <div class="form-container">
             <div class="form-inner">
                 <form class="signup" method="post">
-                    {% if form.error_messages %}
-                        <ol>
-                            {% for error in form.error_messages %}
-                                <li>
-                                    <strong>{{ error|escape }}</strong>
-                                </li>
-                            {% endfor %}
-                        </ol>
-                    {% endif %}
                     {% csrf_token %}
                     {% for field  in form  %}
-                        <div class="field">
-                            {{ field.label }}
+                        <div class="field_wrapper">
+
+                          <div class="field">
+                            {{ field.label_tag }}
+                            {% if field.help_text and field.errors %}
+                              <div class="field_help">
+                                {{ field.help_text}}
+                              </div>
+                            {% endif %}
                             {{ field }}
+                          </div>
+                          {% if field.errors %}
+                            <div class="field_errors">
+                              <strong>Errors: </strong>
+                              {{ field.errors }}
+                              {% comment %} <ul> {% endcomment %}
+                              {% comment %}   {% for err in field.errors %} {% endcomment %}
+                              {% comment %}   <li>{{err}}</li> {% endcomment %}
+                              {% comment %}   {% endfor %} {% endcomment %}
+                              {% comment %} </ul> {% endcomment %}
+                            </div>
+                          {% endif %}
                         </div>
                     {% endfor %}
                     <div class="field btn">
-                        <div class="btn-layer"></div>
-                        <input type="submit" value="Signup">
+                        {% comment %} <div class="btn-layer"></div> {% endcomment %}
+                        <input class="btn-layer" type="submit" value="Signup">
                     </div>
                     <div class="signup-link">
-                    Already have an account? <a href="">Login</a>
+                    Already have an account? <a href="login">Login</a>
                 </div>
             </form>
         </div>
     </div>
 </div>
 {% endblock content %}
-<!-- <div class="fieldWrapper"> -->
-<!--     {{ form.subject.errors }} -->
-<!--     <label for="{{ form.subject.id_for_label }}">Email subject:</label> -->
-<!--     {{ form.subject }} -->
-<!-- </div> -->
