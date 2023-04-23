@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Signup
+{% endblock title %}
+{% block include_files %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% comment %} <script defer src="{% static 'script.js' %}"></script> {% endcomment %}
+{% endblock include_files %}
+{% block content %}
+    <div class="wrapper">
+        <div class="title-text">
+            <div class="title signup">Signup Form</div>
+        </div>
+        <div class="form-container">
+            <div class="form-inner">
+                <form class="signup" method="post">
+                    {% if form.error_messages %}
+                        <ol>
+                            {% for error in form.error_messages %}
+                                <li>
+                                    <strong>{{ error|escape }}</strong>
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    {% endif %}
+                    {% csrf_token %}
+                    {% for field  in form  %}
+                        <div class="field">
+                            {{ field.label }}
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Signup">
+                    </div>
+                    <div class="signup-link">
+                    Already have an account? <a href="">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+<!-- <div class="fieldWrapper"> -->
+<!--     {{ form.subject.errors }} -->
+<!--     <label for="{{ form.subject.id_for_label }}">Email subject:</label> -->
+<!--     {{ form.subject }} -->
+<!-- </div> -->

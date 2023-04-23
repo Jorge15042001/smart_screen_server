@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>{% block title %}base{% endblock %}</title>
+    {% block include_files %}
+    {% endblock %}
+  </head>
+  <body>
+    {% block content %}{% endblock content %}
+
+  </body>
+
+</html>
