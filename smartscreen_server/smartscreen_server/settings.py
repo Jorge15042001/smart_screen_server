@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tailwind',
     'accounts',
-    #  'accounts.apps.ProjectConfig',
+    'smartscreen',
+    'theme',
 ]
 
 MIDDLEWARE = [
@@ -125,8 +127,20 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# model use for authentication
 AUTH_USER_MODEL = 'accounts.ScreenUser'
 
 
+# login config
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"  # new
+
+
+# tailwind config
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+NPM_BIN_PATH = '/usr/bin/npm'

@@ -1,0 +1,38 @@
+{% extends "base_home.html" %}
+{% load static %}
+{% block title %}
+  List Screens
+{% endblock title %}
+
+{% block content%}
+<main class="single_section">
+  <div class=table_wrapper>
+  <table id="screens_table">
+    <thead>
+      <tr>
+        <th>Screen name</th>
+        <th>Receptionist</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for screen in screens %}
+        <tr>
+          <td>{{screen.name}}</td>
+          <td>{{screen.attender}}</td>
+          <td>
+            <a href="">lauch</a>
+            <a href="{% url 'edit_screen' screen.id %}">edit</a>
+            <a href="{% url 'delete_screen' screen.id %}">delete</a>
+          </td>
+        </tr>
+      
+      {% endfor %}
+    </tbody>
+  </table>
+  <a class="btn-redirect" href="{% url 'create_screen' %}">Create Screen</a>
+  </div>
+  
+</main>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base_home.html" %}
+{% load static %}
+{% block title %}
+  Delete Screen
+{% endblock title %}
+{% block content %}
+<main class="single_section">
+    <div class="form_wrapper">
+        <h1 class="title signup">Delete Screen</h1>
+        <div class="form-container">
+            <div class="form-inner">
+                <form class="signup" method="post">
+                    {% csrf_token %}
+                    <p class='extra_option_text'>Do you want to delete the screen: {{object.name}}?</p>
+                    <div class="field btn">
+                        <input class="btn-layer" type="submit" value="Delete">
+                        <a class="btn-layer btn-cancel" href="{% url 'list_screens_admin' %}">Cancel</a>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+  
+</main>
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends "base_home.html" %}
+{% load static %}
+{% block title %}
+    Signup
+{% endblock title %}
+{% block include_files %}
+    {% comment %} <link rel="stylesheet" href="{% static 'style.css' %}"> {% endcomment %}
+{% endblock include_files %}
+{% block content %}
+  <main class="single_section">
+    <div class="form_wrapper">
+      <h1 class="title signup">Update profile</h1>
+        <div class="form-container">
+          <form class="signup" method="post">
+            {% csrf_token %}
+            {% for field  in form  %}
+              <div class="field_wrapper">
+                <div class="field">
+                  {{ field.label_tag }}
+                  {% if field.help_text and field.errors %}
+                    <div class="field_help">
+                      {{ field.help_text}}
+                    </div>
+                  {% endif %}
+                  {{ field }}
+                </div>
+                {% if field.errors %}
+                  <div class="field_errors">
+                    <strong>Errors: </strong>
+                    {{ field.errors }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+            <input class="btn-layer" type="submit" value="update">
+            {% comment %} <div class="extra_option_text"> {% endcomment %}
+            {% comment %} Already have an account? <a href="login">Login</a> {% endcomment %}
+            {% comment %} </div> {% endcomment %}
+          </form>
+      </div>
+    </div>
+  </main>
+{% endblock content %}

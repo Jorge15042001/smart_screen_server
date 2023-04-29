@@ -1,0 +1,41 @@
+{% load static %}
+{% load tailwind_tags %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}base{% endblock %}</title>
+    {% tailwind_css %}
+
+    {% block include_files %}
+    {% endblock %}
+  </head>
+  <body class="">
+    <nav class="nav_bar">
+      <div class="logo">
+        <h1>SmartScreen</h1>
+        
+      </div>
+      <ul class="options">
+        {% if request.user.is_screen_admin  %}
+          <li><a href="{% url 'list_screens_admin' %}">Screen admin</a></li>
+        {% endif %}
+        {% if request.user.is_screen_receptionist %}
+          <li><a href="{% url 'list_screens_receptionist' %}">Screen attender</a></li>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+        <li><a href="{% url 'profile_view' %}">Profile</a></li>
+        {% endif %}
+
+        {% if request.user.is_authenticated %}
+          <li><a href="{% url 'logout' %}">Log out</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">Log in</a></li>
+        {% endif %}
+      </ul>
+      
+    </nav>
+      {% block content %}{% endblock content %}
+
+  </body>
+
+</html>

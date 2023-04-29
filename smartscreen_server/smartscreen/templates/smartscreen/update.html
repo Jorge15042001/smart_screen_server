@@ -1,12 +1,12 @@
 {% extends "base_home.html" %}
 {% load static %}
 {% block title %}
-    Signup
+  Update Screen
 {% endblock title %}
 {% block content %}
 <main class="single_section">
     <div class="form_wrapper">
-        <h1 class="title signup">Signup</h1>
+        <h1 class="title signup">Update Screen</h1>
         <div class="form-container">
             <div class="form-inner">
                 <form class="signup" method="post">
@@ -32,12 +32,9 @@
                         </div>
                     {% endfor %}
                     <div class="field btn">
-                        {% comment %} <div class="btn-layer"></div> {% endcomment %}
-                        <input class="btn-layer" type="submit" value="Signup">
+                        <input class="btn-layer" type="submit" value="Update">
+                        <a class="btn-layer btn-cancel" href="{% url 'list_screens_admin' %}">Cancel</a>
                     </div>
-                    <div class="extra_option_text">
-                    Already have an account? <a href="login">Login</a>
-                </div>
             </form>
         </div>
     </div>

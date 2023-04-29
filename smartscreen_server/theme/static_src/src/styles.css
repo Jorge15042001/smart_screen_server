@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+nav.nav_bar{
+ @apply bg-neutral-700;
+ @apply text-white;
+ @apply h-14;
+ @apply font-semibold;
+
+ /* elements position */
+ @apply grid grid-cols-2 gap-4 items-center ;
+ 
+}
+
+nav .logo{
+  @apply pl-5;
+}
+
+nav .options{
+ @apply grid grid-cols-4 gap-4 justify-items-center items-center;
+ @apply font-semibold;
+}
+nav .options li {
+ @apply hover:text-amber-400;
+}
+
+
+
+/* form */
+body{
+  height: 100vh;
+}
+main.single_section{
+  @apply grid items-center justify-items-center h-full;
+}
+.form_wrapper{
+  @apply p-8 rounded-2xl w-96 shadow-lg shadow-neutral-300 ;
+
+}
+
+.form_wrapper .title-text{
+  @apply w-full;
+}
+
+.form_wrapper h1{
+  @apply w-full py-2 text-center text-4xl font-semibold ;
+}
+
+.form-container .field_wrapper{
+  @apply py-2;
+}
+.form-container .field_wrapper input{
+  @apply w-full rounded-2xl;
+}
+.form-container .field_wrapper input[type="checkbox"]{
+  @apply w-10;
+}
+
+.form-container input[type="submit"]{
+  @apply w-full p-3 my-3 rounded-2xl bg-blue-800 text-white text-lg font-semibold;
+}
+.form-container select{
+  @apply w-full p-3 my-3 rounded-2xl ;
+}
+
+.form-container .extra_option_text{
+  @apply text-center my-2;
+}
+.form-container .extra_option_text a{
+  @apply text-blue-500;
+}
+.form-container form .field_help{
+  @apply text-neutral-500;
+}
+.form-container form .field_errors{
+  @apply text-red-500 pl-5;
+}
+.form-container form .field_errors ul{
+  @apply list-disc list-inside;
+}
+
+/* data-container */
+.data-wrapper{
+  @apply p-8 rounded-2xl w-1/2 shadow-lg shadow-neutral-300 ;
+
+}
+.data-wrapper h1{
+  @apply w-full py-2 text-center text-4xl font-semibold;
+}
+.data-wrapper .data-member{
+  @apply my-3;
+}
+.data-container .data-member{
+  @apply grid grid-cols-2;
+}
+.data-container .data-member h2{
+  @apply font-semibold;
+}
+.data-container a.btn{
+  @apply w-full p-3 my-3 rounded-2xl bg-blue-800 text-white text-lg font-semibold;
+  @apply block w-full text-center;
+}
+
+a.btn-cancel {
+  @apply w-full block p-3 my-3;
+  @apply rounded-2xl bg-neutral-700;
+  @apply text-center text-white text-lg font-semibold;
+}
+a.btn-redirect{
+  @apply w-full block p-3 my-3;
+  @apply rounded-2xl bg-blue-800;
+  @apply text-center text-white text-lg font-semibold;
+}
+
+
+/* tables */
+.table_wrapper{
+  @apply w-3/4;
+  @apply p-8 rounded-2xl shadow-lg shadow-neutral-300 ;
+
+}
+.table_wrapper > table#screens_table{
+  @apply w-full ;
+  @apply rounded-t-2xl overflow-hidden;
+
+}
+.table_wrapper > table#screens_table>thead{
+  @apply text-left text-white text-lg font-semibold ;
+}
+.table_wrapper > table#screens_table>thead th{
+  @apply p-3 pl-3;
+}
+.table_wrapper > table#screens_table>thead>tr{
+  @apply bg-neutral-700;
+  /* @apply first:rounded-tl-2xl first:border-0 last:rounded-tr-2xl last:border-0; */
+}
+.table_wrapper > table#screens_table>tbody td{
+  @apply p-2 pl-3;
+}
+.table_wrapper > table#screens_table>tbody>tr{
+  @apply even:bg-slate-100;
+  @apply hover:text-amber-400;
+}
+
+.table_wrapper > table#screens_table>tbody>tr>td{
+  @apply last:grid last:grid-cols-3;
+}

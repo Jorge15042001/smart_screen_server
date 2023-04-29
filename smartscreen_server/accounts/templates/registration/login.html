@@ -1,6 +1,51 @@
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
-</form>
+{% extends "base_home.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock title %}
+
+
+{% block content %}
+<main class='single_section'>
+    <div class="form_wrapper">
+        <h1 class="title login">Login</h1>
+        <div class="form-container">
+            <div class="form-inner">
+                <form method='post'  class="login">
+                    {% csrf_token %}
+                    {% for field  in form  %}
+                        <div class="field_wrapper">
+
+                          <div class="field">
+                            {{ field.label_tag }}
+                            {% if field.help_text and field.errors %}
+                              <div class="field_help">
+                                {{ field.help_text}}
+                              </div>
+                            {% endif %}
+                            {{ field }}
+                          </div>
+                          {% if field.errors %}
+                            <div class="field_errors">
+                              <strong>Errors: </strong>
+                              {{ field.errors }}
+                            </div>
+                          {% endif %}
+                        </div>
+                    {% endfor %}
+                  
+                    <input class="btn-layer" type="submit" value="Login">
+                    <div class="extra_option_text">
+                    Create an account <a href="/accounts/signup">Signup now</a>
+                </div>
+            </form>
+    </div>
+</div>
+</div>
+</main>
+
+{% endblock content %}
+<!-- <div class="fieldWrapper"> -->
+<!--     {{ form.subject.errors }} -->
+<!--     <label for="{{ form.subject.id_for_label }}">Email subject:</label> -->
+<!--     {{ form.subject }} -->
+<!-- </div> -->
