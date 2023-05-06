@@ -147,3 +147,67 @@ a.btn-redirect{
 .table_wrapper > table#screens_table>tbody>tr>td{
   @apply last:grid last:grid-cols-3;
 }
+
+
+/* applications */
+
+#video_chat_window{
+  /* @apply container mx-auto; */
+  @apply h-screen w-screen;
+  @apply bg-stone-800;
+}
+#video_chat_window #videos {
+  @apply relative;
+  @apply h-full;
+}
+#video_chat_window .receptionist_videos{
+  height:  90% !important;
+}
+#video_chat_window #my_video{
+  /* aspect-ratio: 16 / 9; */
+  @apply absolute bottom-0 right-0 ;
+  /* @apply p-2; */
+  width:15%;
+  aspect-ratio: 1 / 1;
+}
+#video_chat_window #video{
+  @apply absolute;
+  @apply w-full h-full;
+  @applyl p-2;
+  /* aspect-ratio: 16 / 9; */
+
+}
+#video_chat_window #my_video img,
+#video_chat_window #my_video video{
+  /* @apply aspect-video; */
+  @apply relative h-full w-full object-cover;
+  @apply rounded-2xl border-2 border-neutral-400 overflow-hidden; 
+  /* aspect-ratio: 1/1; */
+}
+#video_chat_window #video img,
+#video_chat_window #video video{
+  @apply relative h-full w-full object-cover;
+  /* @apply rounded-2xl border-2 border-blue-800 overflow-hidden;  */
+}
+#video_chat_window #video img{
+  @apply object-fill;
+}
+#video_chat_window #my_video img{
+  @apply object-fill;
+}
+#video_chat_window .call_controls {
+  height:  10%;
+  @apply flex items-center justify-center;
+}
+
+#video_chat_window .call_controls button {
+  @apply p-4 mx-2;
+  @apply bg-white;
+  @apply rounded-full overflow-hidden; 
+}
+#video_chat_window .call_controls button#end_call {
+  @apply bg-red-600;
+}
+#video_chat_window .call_controls button img{
+  @apply h-12;
+}

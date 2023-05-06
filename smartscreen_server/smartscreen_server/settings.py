@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-9%j5z%x_@@qn_^q2qkf+k890u8_(z48#v3q5=**kuz=h+d=pqb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'smartscreen',
     'theme',
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
@@ -72,6 +74,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'smartscreen_server.wsgi.application'
+# channels
+ASGI_APPLICATION = 'smartscreen_server.asgi.application'
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
 
 
 # Database
@@ -120,6 +132,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+        f'{BASE_DIR}/smartscreen/static'
+        ]
+
+print( f'{BASE_DIR}/smartscreen/static')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

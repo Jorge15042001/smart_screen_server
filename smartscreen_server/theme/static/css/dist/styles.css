@@ -737,6 +737,10 @@ select {
   display: table;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -1051,4 +1055,103 @@ a.btn-redirect {
 .table_wrapper > table#screens_table>tbody>tr>td:last-child {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* applications */
+
+#video_chat_window{
+  /* @apply container mx-auto; */
+  height: 100vh;
+  width: 100vw;
+  --tw-bg-opacity: 1;
+  background-color: rgb(41 37 36 / var(--tw-bg-opacity));
+}
+
+#video_chat_window #videos {
+  position: relative;
+  height: 100%;
+}
+
+#video_chat_window .receptionist_videos{
+  height:  90% !important;
+}
+
+#video_chat_window #my_video{
+  /* aspect-ratio: 16 / 9; */
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  /* @apply p-2; */
+  width:15%;
+  aspect-ratio: 1 / 1;
+}
+
+#video_chat_window #video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  @applyl p-2;
+  /* aspect-ratio: 16 / 9; */
+}
+
+#video_chat_window #my_video img,
+#video_chat_window #my_video video{
+  /* @apply aspect-video; */
+  position: relative;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  border-radius: 1rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(163 163 163 / var(--tw-border-opacity));
+  /* aspect-ratio: 1/1; */
+}
+
+#video_chat_window #video img,
+#video_chat_window #video video {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* @apply rounded-2xl border-2 border-blue-800 overflow-hidden;  */
+}
+
+#video_chat_window #video img {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+#video_chat_window #my_video img {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+#video_chat_window .call_controls {
+  height:  10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#video_chat_window .call_controls button {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 1rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  overflow: hidden;
+  border-radius: 9999px;
+}
+
+#video_chat_window .call_controls button#end_call {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
+#video_chat_window .call_controls button img {
+  height: 3rem;
 }

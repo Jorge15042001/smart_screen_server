@@ -54,6 +54,7 @@ class SmartScreenDelete(generic.DeleteView):
     success_url = reverse_lazy("list_screens_admin")
     template_name = 'smartscreen/delete.html'
 
+
 class SmartScreenListReceptionist(generic.ListView):
     model = SmartScreen
     context_object_name = 'screens'
@@ -61,3 +62,12 @@ class SmartScreenListReceptionist(generic.ListView):
 
     def get_queryset(self):
         return SmartScreen.objects.filter(attender=self.request.user)
+
+
+def screen_app(request, screen_id):
+    screen = SmartScreen.objects.filter(id=screen_id).first()
+    return render(request, "smartscreen/app_screen.html", {"screen": screen})
+
+def receptionist_app(request, screen_id):
+    screen = SmartScreen.objects.filter(id=screen_id).first()
+    return render(request, "smartscreen/app_receptionist.html", {"screen": screen})

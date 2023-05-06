@@ -21,7 +21,7 @@
           <td>{{screen.name}}</td>
           <td>{{screen.attender}}</td>
           <td>
-            <a href="">lauch</a>
+            <a href="{% url 'admin_app' screen.id%}">lauch</a>
             <a href="{% url 'edit_screen' screen.id %}">edit</a>
             <a href="{% url 'delete_screen' screen.id %}">delete</a>
           </td>
