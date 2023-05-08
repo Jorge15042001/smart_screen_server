@@ -11,6 +11,7 @@
     <script>
       const receptionist = "{{request.user.username}}";
       const screen_id= "{{screen.id}}";
+      const socket_host = "smartscreen.jorgevulgarin.cc:8001";
     </script>
     <script defer src="{% static "smartscreen/utils.js" %}"> </script>
     <script defer src="{% static "smartscreen/app_receptionist_socket.js" %}"> </script>

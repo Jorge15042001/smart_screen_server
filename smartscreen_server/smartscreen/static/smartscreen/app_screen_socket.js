@@ -1,4 +1,4 @@
-let url = `ws://${window.location.host}/ws/smartscreen_gui/${screen_id}/`
+let url = `ws://${socket_host}/ws/smartscreen_gui/${screen_id}/`
 const screenSocket = new WebSocket(url)
 
 const sendStatusToServer = function(){

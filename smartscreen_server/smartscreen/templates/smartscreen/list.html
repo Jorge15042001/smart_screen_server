@@ -6,6 +6,7 @@
 {% block include_files %}
   <script>
     const admin_id = "{{request.user.username}}";
+    const socket_host = "smartscreen.jorgevulgarin.cc:8001";
   </script>
   <script defer src="{% static "smartscreen/admin_loby_socket.js" %}">  </script>
 
