@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9%j5z%x_@@qn_^q2qkf+k890u8_(z48#v3q5=**kuz=h+d=pqb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["https://smartscreen.jorgevulgarin.cc"]
 
 
 # Application definition
