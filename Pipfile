@@ -10,6 +10,7 @@ channels = {extras = ["daphne"], version = "*"}
 channels-redis = "*"
 django-extensions = "*"
 werkzeug = "*"
+attrs = "*"
 
 [dev-packages]
 
