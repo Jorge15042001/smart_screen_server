@@ -3,7 +3,13 @@
 {% block title %}
   List Screens
 {% endblock title %}
+{% block include_files %}
+  <script>
+    const admin_id = "{{request.user.username}}";
+  </script>
+  <script defer src="{% static "smartscreen/admin_loby_socket.js" %}">  </script>
 
+{% endblock %}
 {% block content%}
 <main class="single_section">
   <div class=table_wrapper>
@@ -11,15 +17,19 @@
     <thead>
       <tr>
         <th>Screen name</th>
+        <th>Screen id</th>
         <th>Receptionist</th>
+        <th>Hardware Status</th>
         <th>Actions</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="list_screens">
       {% for screen in screens %}
         <tr>
           <td>{{screen.name}}</td>
+          <td class="screen_id">{{screen.id}}</td>
           <td>{{screen.attender}}</td>
+          <td class="screen_status" >Disconnected</td>
           <td>
             <a href="{% url 'admin_app' screen.id%}">lauch</a>
             <a href="{% url 'edit_screen' screen.id %}">edit</a>

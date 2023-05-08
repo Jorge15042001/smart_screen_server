@@ -745,6 +745,16 @@ select {
   height: 100vh;
 }
 
+@keyframes pulse-alert-kf {
+  50% {
+    background-color: #facc15;
+  }
+}
+
+.animate-pulse-alert {
+  animation: pulse-alert-kf 1s linear infinite;
+}
+
 .items-center {
   align-items: center;
 }

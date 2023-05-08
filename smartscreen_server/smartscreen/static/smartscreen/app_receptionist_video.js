@@ -4,6 +4,11 @@ const toggle_mic_btn = document.getElementById("toggle_mic")
 const toggle_cam_btn = document.getElementById("toggle_cam")
 const end_call_btn = document.getElementById("end_call")
 
+end_call_btn.onclick= ()=>{
+  // window.location.href = `${window.location.host}/list_screens_receptionist}/`
+  window.location.replace(`http://${window.location.host}/list_screens_receptionist`);
+}
+
 //object used to store peer connecteno to the smartscreen app
 const screen_peer = null
 const getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
