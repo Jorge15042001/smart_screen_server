@@ -1,0 +1,8 @@
+[Unit]
+Description=smart screen socket
+After=network.target 
+[Service]
+User=jorge1504
+ExecStart=/usr/bin/bash /home/jorge1504/projects/smartscreen-server/smartscreen_server/config/daphne.bash
+[Install]
+WantedBy=multi-user.target
