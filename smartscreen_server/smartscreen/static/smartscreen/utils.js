@@ -11,8 +11,9 @@ function getLoadingGif() {
 
 function connectToPeerServer() {
   const myPeer = new Peer(undefined, {
-    host: 'smartscreen.jorgevulgarin.cc',
-    port: 9000
+    host: '/',
+    port: 9000,
+    secure: false
   });
   return myPeer;
 }
