@@ -162,3 +162,4 @@ INTERNAL_IPS = [
 ]
 
 NPM_BIN_PATH = '/usr/bin/npm'
+STATIC_ROOT = "/var/www/smartscreen/static/"
