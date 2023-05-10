@@ -13,7 +13,7 @@ function connectToPeerServer() {
   const myPeer = new Peer(undefined, {
     host: '/',
     port: 9000,
-    secure: false
+    secure: true 
   });
   return myPeer;
 }
