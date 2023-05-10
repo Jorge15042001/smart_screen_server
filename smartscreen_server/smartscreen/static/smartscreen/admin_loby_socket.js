@@ -1,4 +1,4 @@
-let url = `ws://${socket_host}/ws/admin_loby/${admin_id}/`;
+let url = `wss://${socket_host}/ws/admin_loby/${admin_id}/`;
 const adminSocket = new WebSocket(url);
 
 const sendStatusToServer = function() {

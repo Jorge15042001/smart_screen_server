@@ -1,4 +1,4 @@
-let url = `ws://${socket_host}/ws/receptionist_gui/${screen_id}/`
+let url = `wss://${socket_host}/ws/receptionist_gui/${screen_id}/`
 const receptionistSocket = new WebSocket(url)
 
 const sendStatusToServer = function(){
