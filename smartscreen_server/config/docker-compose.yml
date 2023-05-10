@@ -3,16 +3,11 @@ version: '3.7'
 services:
   peerjs:
     image: peerjs/peerjs-server
-    command: --port 9000 --cors --sslkey /var/ssl/privkey.pem --sslcert /var/ssl/fullchain.pem
+    command: --port 9000 --cors --sslkey /home/privkey.pem --sslcert /home/fullchain.pem
     container_name: peerjs_server
     expose:
       - 9000
     ports:
       - "9000:9000"
     volumes:
-      # - /etc/letsencrypt/live/smartscreen.jorgevulgarin.cc:/var/ssl
-      - type: bind
-        source: /etc/letsencrypt/live/smartscreen.jorgevulgarin.cc
-        target: /var/ssl
-        bind:
-          create_host_path: true
+      - /etc/letsencrypt/live/smartscreen.jorgevulgarin.cc:/home/
