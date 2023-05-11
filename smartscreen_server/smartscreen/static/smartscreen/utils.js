@@ -10,10 +10,6 @@ function getLoadingGif() {
 }
 
 function connectToPeerServer() {
-  const myPeer = new Peer(undefined, {
-    host: '/',
-    port: 9000,
-    secure: true 
-  });
+  const myPeer = new Peer(undefined, { host: '/', });
   return myPeer;
 }
