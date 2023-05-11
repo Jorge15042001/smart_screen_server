@@ -51,7 +51,7 @@ getUserMedia({
     call.on("close", () => {
       // receptionist_video = document.createElement("video");
       const img = document.createElement("img");
-      img.src = "https://v.fastcdn.co/u/430e104e/57579327-0-Loaders-3.svg"
+      img.src = "/static/smartscreen/icons/loading.svg"
       receptionist_video.replaceChild(img,receptionist_video.children[0]);
     });
 
