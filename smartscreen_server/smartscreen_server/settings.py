@@ -58,7 +58,13 @@ MIDDLEWARE = [
 ]
 
 # set conternt security policy
-CSP_STYLE_SRC = ["'self'"]
+CSP_IMG_SRC = ("'self'")
+
+CSP_STYLE_SRC = ("'self'")
+
+CSP_SCRIPT_SRC = ("'self'","'script-src'","'unsafe-inline'","unpkg.com",)
+
+#CSTYLE_SRC = ["'default-src'","'self'","unpkg.com","'unsafe-inline'"]
 
 ROOT_URLCONF = 'smartscreen_server.urls'
 
