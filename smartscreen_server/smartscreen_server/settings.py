@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9%j5z%x_@@qn_^q2qkf+k890u8_(z48#v3q5=**kuz=h+d=pqb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = ["https://smartscreen.jorgevulgarin.cc"]
@@ -166,8 +166,9 @@ NPM_BIN_PATH = '/usr/bin/npm'
 
 STATIC_ROOT = "/var/www/smartscreen/static/"
 
+# some ssl configurations
 SECURE_HSTS_SECONDS = 30  # Unit is seconds; *USE A SMALL VALUE FOR TESTING!*
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
