@@ -11,6 +11,7 @@ channels-redis = "*"
 django-extensions = "*"
 werkzeug = "*"
 attrs = "*"
+django-csp = "*"
 
 [dev-packages]
 

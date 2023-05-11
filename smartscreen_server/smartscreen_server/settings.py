@@ -54,7 +54,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
+
+# set conternt security policy
+CSP_STYLE_SRC = ["'self'"]
 
 ROOT_URLCONF = 'smartscreen_server.urls'
 
@@ -167,7 +171,7 @@ NPM_BIN_PATH = '/usr/bin/npm'
 STATIC_ROOT = "/var/www/smartscreen/static/"
 
 # some ssl configurations
-SECURE_HSTS_SECONDS = 30  # Unit is seconds; *USE A SMALL VALUE FOR TESTING!*
+SECURE_HSTS_SECONDS = 2_592_000  # 30 days
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
