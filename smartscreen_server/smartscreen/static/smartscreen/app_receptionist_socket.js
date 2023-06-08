@@ -29,6 +29,7 @@ receptionistSocket.onmessage = function(e) {
   }
   if (data.msg_type=== 'screengui.disconnected') {
       // screen_video = document.createElement("video")
+    screenDisonnectedCallback();
   }
   if (data.msg_type === 'screengui.id') {
     console.log("screengui id", data)

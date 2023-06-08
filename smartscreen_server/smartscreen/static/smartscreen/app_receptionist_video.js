@@ -27,7 +27,8 @@ myPeer.on("open", id => {
   )
 });
 
-let screenConnectedCallback = (userId) => { };
+let screenConnectedCallback = (userId) => { console.log(`smartscreen connected with id ${userId} `)};
+let screenDisonnectedCallback = () => { console.log("smartscreen disconnected")};
 
 
 getUserMedia({
@@ -75,6 +76,8 @@ getUserMedia({
     call.on("close", () => {
       screen_video.replaceChild(getLoadingGif(), screen_video.children[0]);
     });
+
+    screenDisonnectedCallback = ()=>{ screen_video.replaceChild(getLoadingGif(), screen_video.children[0]); }
 
   }
 
