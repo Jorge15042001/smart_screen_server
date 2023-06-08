@@ -77,9 +77,8 @@ getUserMedia({
       screen_video.replaceChild(getLoadingGif(), screen_video.children[0]);
     });
 
-    screenDisonnectedCallback = ()=>{ screen_video.replaceChild(getLoadingGif(), screen_video.children[0]); }
-
   }
+  screenDisonnectedCallback = ()=>{ screen_video.replaceChild(getLoadingGif(), screen_video.children[0]); }
 
   myPeer.on("call", call => {
     call.answer(stream);
