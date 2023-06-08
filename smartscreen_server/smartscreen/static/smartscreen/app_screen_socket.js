@@ -28,7 +28,7 @@ screenSocket.onmessage = function(e) {
     console.log("status received from screengui")
   }
   if (data.msg_type=== 'receptionistgui.disconnected') {
-    console.log("receptionistgui disconnected")
+    receptionistDisConnectedCallback();
   }
   if (data.msg_type === 'receptionistgui.id') {
     console.log("receptionistgui id", data)

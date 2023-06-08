@@ -1,7 +1,8 @@
 let my_video = document.querySelector("#my_video");
 let receptionist_video = document.querySelector("#video");
 
-let receptionistConnectedCallback = (userId) => { };
+let receptionistConnectedCallback = (userId) => { console.log(`receptionist connected with id ${id}`) };
+let receptionistDisConnectedCallback = () => { console.log("receptionist disconnected") };
 //object used to store peer connecteno to the smartscreen app
 const screen_peer = null
 const getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
@@ -39,6 +40,7 @@ getUserMedia({
     call.on("close", () => {
       receptionist_video.replaceChild(getLoadingGif(),receptionist_video.children[0]);
     });
+    receptionistConnectedCallback = () =>{ receptionist_video.replaceChild(getLoadingGif(),receptionist_video.children[0]); }
 
   }
 
