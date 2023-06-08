@@ -40,7 +40,7 @@ getUserMedia({
     call.on("close", () => {
       receptionist_video.replaceChild(getLoadingGif(),receptionist_video.children[0]);
     });
-    receptionistConnectedCallback = () =>{ receptionist_video.replaceChild(getLoadingGif(),receptionist_video.children[0]); }
+    receptionistDisConnectedCallback = () =>{ receptionist_video.replaceChild(getLoadingGif(),receptionist_video.children[0]); }
 
   }
 
