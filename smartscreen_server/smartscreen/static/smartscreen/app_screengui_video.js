@@ -16,7 +16,7 @@ myPeer.on("open", id => {
       "msg_type": "screengui.id",
       "id": id
     }));
-  }, 10000)
+  }, 3000)
 
 });
 

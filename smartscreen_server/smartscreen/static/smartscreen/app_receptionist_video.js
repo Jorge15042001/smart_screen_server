@@ -23,7 +23,7 @@ myPeer.on("open", id => {
       "msg_type": "receptionistgui.id",
       "id": id
     }));
-  }, 10000
+  }, 3000 
   )
 });
 
