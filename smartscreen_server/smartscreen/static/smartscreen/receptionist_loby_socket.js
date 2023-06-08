@@ -59,6 +59,7 @@ alertSocket.onmessage = function(e) {
     const elem = getScreenRow(data.screen)
     elem.classList.add("animate-pulse-alert")
     elem.getElementsByClassName("screen_status")[0].innerText = "Waiting"
+     window.open(`/receptionist_screen/${data.screen}`, "_blank", "toolbar=no,scrollbars=no,resizable=yes,menubar=no,titlebar=no,location=no,status=no");
   }
   if (data.msg_type === 'screenhardware.personleaves') {
     console.log("personleaves")
