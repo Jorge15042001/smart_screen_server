@@ -36,7 +36,11 @@ getUserMedia({
   audio: true 
 }, stream => {
   stream.getVideoTracks()[0].enabled = false;
-  // stream.getAudioTracks()[0].enabled = false;
+  stream.getAudioTracks()[0].enabled = false;
+  toggle_mic_btn.style.backgroundColor = "gray";
+  toggle_cam_btn.style.backgroundColor = "gray";
+  
+
   toggle_mic_btn.onclick = ()=>{
     const active = stream.getAudioTracks()[0].enabled ;
     if (active){
