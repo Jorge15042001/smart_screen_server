@@ -41,7 +41,7 @@ alertSocket.onmessage = function(e) {
     console.log("Screen connected")
     const elem = getScreenRow(data.screen)
     // if (elem.getElementsByClassName("screen_status")[0].innerText !== "Waiting")
-    if (data.status === "waiting"){
+    if (data.status === "waiting") {
       elem.classList.add("animate-pulse-alert")
       elem.getElementsByClassName("screen_status")[0].innerText = data.status
     }
@@ -61,12 +61,12 @@ alertSocket.onmessage = function(e) {
     elem.getElementsByClassName("screen_status")[0].innerText = "Waiting"
 
     const call_window = window.open(`/receptionist_screen/${data.screen}`, "_blank", "toolbar=no,scrollbars=no,resizable=yes,menubar=no,titlebar=no,location=no,status=no");
-    setTimeout(()=>{
-      call_window.document.getElementById("end_call").onclick = ()=>{
-          call_window.close()
+    setTimeout(() => {
+      call_window.document.getElementById("end_call").onclick = () => {
+        call_window.close()
       }
 
-    },10000)
+    }, 10000);
   }
   if (data.msg_type === 'screenhardware.personleaves') {
     console.log("personleaves")
