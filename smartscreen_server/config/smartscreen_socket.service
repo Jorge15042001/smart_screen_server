@@ -2,7 +2,7 @@
 Description=smart screen socket
 After=network.target 
 [Service]
-User=root
-ExecStart=/usr/bin/bash /root/smart_screen_server/smartscreen_server/config/daphne.bash
+User=manager
+ExecStart=/usr/bin/bash /home/manager/smart_screen_server/smartscreen_server/config/daphne.bash
 [Install]
 WantedBy=multi-user.target

@@ -12,6 +12,7 @@ django-extensions = "*"
 werkzeug = "*"
 attrs = "*"
 django-csp = "*"
+gunicorn = "*"
 
 [dev-packages]
 
