@@ -60,13 +60,14 @@ alertSocket.onmessage = function(e) {
     elem.classList.add("animate-pulse-alert")
     elem.getElementsByClassName("screen_status")[0].innerText = "Waiting"
 
-    const call_window = window.open(`/receptionist_screen/${data.screen}`, "_blank", "toolbar=no,scrollbars=no,resizable=yes,menubar=no,titlebar=no,location=no,status=no");
-    setTimeout(() => {
-      call_window.document.getElementById("end_call").onclick = () => {
-        call_window.close()
-      }
-
-    }, 10000);
+    CallManage.newPopup(data.screen);
+    // const call_window = window.open(`/receptionist_screen/${data.screen}`, "_blank", "toolbar=no,scrollbars=no,resizable=yes,menubar=no,titlebar=no,location=no,status=no");
+    // setTimeout(() => {
+    //   call_window.document.getElementById("end_call").onclick = () => {
+    //     call_window.close()
+    //   }
+    //
+    // }, 10000);
   }
   if (data.msg_type === 'screenhardware.personleaves') {
     console.log("personleaves")

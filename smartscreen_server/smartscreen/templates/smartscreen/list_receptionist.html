@@ -9,6 +9,7 @@
     const socket_host = "smartscreen.jorgevulgarin.cc";
     console.log(receptionist);
   </script>
+  <script defer src="{% static "smartscreen/call_popup.js" %}">  </script>
   <script defer src="{% static "smartscreen/receptionist_loby_socket.js" %}">  </script>
 
 {% endblock %}
@@ -33,7 +34,8 @@
           <td>{{screen.admin}}</td>
           <td  class="screen_status">Disconnected</td>
           <td>
-            <a href="{% url "receptionist_app" screen.id %}">Lauch</a>
+            <a onclick="CallManager.newPopup({{screen.id}})" >Lauch</a>
+            {% comment %} <a href="{% url "receptionist_app" screen.id %}">Lauch</a> {% endcomment %}
           </td>
         </tr>
       

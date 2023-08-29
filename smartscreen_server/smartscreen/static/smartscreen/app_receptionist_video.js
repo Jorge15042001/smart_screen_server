@@ -6,7 +6,14 @@ const end_call_btn = document.getElementById("end_call")
 
 end_call_btn.onclick= ()=>{
   // window.location.href = `${window.location.host}/list_screens_receptionist}/`
-  window.location.replace(`http://${window.location.host}/list_screens_receptionist`);
+
+  if (window.opener && window.opener !== window) {//if it is a popup
+    // you are in a popup
+    window.close()
+  }
+  else{
+    window.location.replace(`http://${window.location.host}/list_screens_receptionist`);
+  }
 }
 
 //object used to store peer connecteno to the smartscreen app
