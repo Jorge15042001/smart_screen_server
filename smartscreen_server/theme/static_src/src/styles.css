@@ -211,3 +211,25 @@ a.btn-redirect{
 #video_chat_window .call_controls button img{
   @apply h-12;
 }
+
+#video_chat_window #status_bar_wrapper{
+  @apply flex justify-center w-full;
+  @apply opacity-80;
+  @apply absolute z-40 ;
+}
+#video_chat_window #status_bar{
+  @apply bg-stone-900 rounded-lg;
+  @apply px-10 py-5;
+  @apply text-center text-white;
+}
+
+#video_chat_window #status_bar h1{
+  @apply font-bold text-2xl pb-2;
+}
+#video_chat_window #notification_center_wrapper{
+  @apply absolute w-full h-full flex justify-center items-center hidden;
+}
+#video_chat_window #notification_center{
+  @apply bg-white py-5 px-10 rounded-lg opacity-80 z-40 animate-pulse;
+}
+

@@ -28,9 +28,13 @@ screenSocket.onopen = () => {
     }
     if (data.msg_type === 'receptionistgui.disconnected') {
       receptionistDisConnectedCallback();
+      notificationManager.pushNotification("Se perdió la conexión con receptionista, espere un momento ...");
+      statusManager.setStatus("Restableciendo conexión ...", false);
     }
     if (data.msg_type === 'receptionistgui.id') {
       console.log("receptionistgui id", data)
+      notificationManager.pushNotification("Estableciendo conexión con recepcionista, espere un momento por favor...");
+      statusManager.setStatus("Conectando...")
       receptionistConnectedCallback(data["id"])
     }
   }
