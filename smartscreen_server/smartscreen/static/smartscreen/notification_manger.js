@@ -5,7 +5,7 @@ class NotificationManager {
     this.timeout = undefined;
     this.message_tag = null;
   }
-  pushNotificaiton(message) {
+  pushNotification(message) {
     if (this.active) {
       this.clearNotification();
     };
