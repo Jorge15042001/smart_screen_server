@@ -63,8 +63,10 @@ alertSocket.onmessage = function(e) {
     CallManager.newPopup(data.screen);
     // const call_window = window.open(`/receptionist_screen/${data.screen}`, "_blank", "toolbar=no,scrollbars=no,resizable=yes,menubar=no,titlebar=no,location=no,status=no");
     setTimeout(() => {
+      console.log(CallManager.popup.window.document.getElementById("end_call"));
       CallManager.popup.window.document.getElementById("end_call").onclick = () => {
-        CallManager.popup.window.close()
+
+        CallManager.popup.close();
       }
     }, 3000);
 
