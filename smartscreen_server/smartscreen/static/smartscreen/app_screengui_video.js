@@ -22,7 +22,7 @@ myPeer.on("open", id => {
 
 getUserMedia({
   video: true,
-  audio: true 
+  audio: true
 }, stream => {
   // stream.getVideoTracks()[0].enabled = false;
   // stream.getAudioTracks()[0].enabled = false;
@@ -38,9 +38,9 @@ getUserMedia({
       addVideoStream(receptionist_video.children[0], userVideoStream);
     });
     call.on("close", () => {
-      receptionist_video.replaceChild(getLoadingGif(),receptionist_video.children[0]);
+      receptionist_video.replaceChild(getLoadingGif(), receptionist_video.children[0]);
     });
-    receptionistDisConnectedCallback = () =>{ receptionist_video.replaceChild(getLoadingGif(),receptionist_video.children[0]); }
+    receptionistDisConnectedCallback = () => { receptionist_video.replaceChild(getLoadingGif(), receptionist_video.children[0]); }
 
   }
 
@@ -52,9 +52,8 @@ getUserMedia({
     });
     call.on("close", () => {
       // receptionist_video = document.createElement("video");
-      const img = document.createElement("img");
-      img.src = "/static/smartscreen/icons/loading.svg"
-      receptionist_video.replaceChild(img,receptionist_video.children[0]);
+      const img = getLoadingGif();
+      receptionist_video.replaceChild(img, receptionist_video.children[0]);
     });
 
   });

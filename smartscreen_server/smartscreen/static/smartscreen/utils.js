@@ -3,9 +3,15 @@ function createVideo(muted = false) {
   vid.muted = muted;
   return vid;
 }
-function getLoadingGif() {
+function getLoadingGif(type = "smile") {
   const img = document.createElement("img");
-  img.src = "/static/smartscreen/icons/loading.svg"
+
+  if (type === "smile") {
+    img.src = "/static/smartscreen/icons/loading_smile.svg"
+  }
+  if (type === "circles") {
+    img.src = "/static/smartscreen/icons/loading.svg"
+  }
   return img;
 }
 
