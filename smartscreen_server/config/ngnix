@@ -1,6 +1,6 @@
 server_tokens               off;
-access_log                  /var/log/nginx/supersecure.access.log;
-error_log                   /var/log/nginx/supersecure.error.log;
+access_log                  /var/log/nginx/smartscreen.access.log;
+error_log                   /var/log/nginx/smartscreen.error.log;
 
 # Return 444 status code & close connection if no Host header present
 server {
@@ -10,7 +10,7 @@ server {
 
 # Redirect HTTP to HTTPS
 server {
-  server_name               smartscreen.jorgevulgarin.cc;
+  server_name               200.10.147.205;
   listen                    80;
   return                    307 https://$host$request_uri;
 }
@@ -48,10 +48,14 @@ server {
 # ssl configuration
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/smartscreen.jorgevulgarin.cc/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/smartscreen.jorgevulgarin.cc/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    # for self signed certificates
+    ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
+    ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
+    # for valid certificate
+    # ssl_certificate /etc/letsencrypt/live/smartscreen.jorgevulgarin.cc/fullchain.pem; # managed by Certbot
+    # ssl_certificate_key /etc/letsencrypt/live/smartscreen.jorgevulgarin.cc/privkey.pem; # managed by Certbot
+    # include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    # ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 
 
