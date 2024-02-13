@@ -68,6 +68,7 @@ def screen_app(request, screen_id):
     screen = SmartScreen.objects.filter(id=screen_id).first()
     return render(request, "smartscreen/app_screen.html", {"screen": screen})
 
+
 def receptionist_app(request, screen_id):
     screen = SmartScreen.objects.filter(id=screen_id).first()
     return render(request, "smartscreen/app_receptionist.html", {"screen": screen})
