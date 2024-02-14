@@ -39,8 +39,8 @@ gunicorn -c config/gunicorn/dev.py
 
 ```
 ### Start Daphne
-# TODO: maybe daphne can do all gunicorn does and gunicorn could be dropped
-# TODO: maybe set it up as a user service so no root permisions are requiered
+TODO: maybe daphne can do all gunicorn does and gunicorn could be dropped
+TODO: maybe set it up as a user service so no root permisions are requiered
 ```bash
 sudo cp smartscreen_socket.service /etc/systemd/system/
 sudo systemctl start smartscreen_socket.service
